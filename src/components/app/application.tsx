@@ -30,6 +30,12 @@ const layers = [
         }),
       }),
   }),
+  new VectorLayer({
+    source: new VectorSource({
+      url: "/api/grunnskoler",
+      format: new GeoJSON(),
+    }),
+  }),
 ];
 
 const map = new Map({
