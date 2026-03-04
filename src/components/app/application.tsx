@@ -4,14 +4,15 @@ import TileLayer from "ol/layer/Tile.js";
 import { OSM } from "ol/source.js";
 import { useGeographic } from "ol/proj.js";
 
-// @ts-ignore
 import "ol/ol.css";
 
 useGeographic();
 
+const layers = [new TileLayer({ source: new OSM() })];
+
 const map = new Map({
   view: new View({ center: [10.7, 59.9], zoom: 12 }),
-  layers: [new TileLayer({ source: new OSM() })],
+  layers,
 });
 
 export function Application() {
